@@ -11,26 +11,17 @@ main {
   flex-direction: row;
 }
 
+a:hover {
+
+}
+
 .left-city {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #5A5353;
   width: 50%;
   height: 100vh;
-  position: relative;
-}
-
-.left-city img {
-  width: 100%;
-  height: auto;
-  display: flex;
-}
-
-.left-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  right: 50%;
 }
 
 .button {
@@ -39,7 +30,7 @@ main {
   color: white;
   border: 3px solid white;
   text-align: center;
-  font-size: 2rem;
+  font-size: 3.5rem;
   display: inline-block;
 
 }
@@ -48,7 +39,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  background-color: #5A5353;
   width: 50%;
   height: 100vh;
 }

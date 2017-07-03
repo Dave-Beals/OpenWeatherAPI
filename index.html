@@ -7,16 +7,22 @@
   </head>
   <body>
     <main>
+      <div id="weatherAudio">
+        <audio id="weatherSound">
+          <source src="media/inception-horn.wav" type="audio/wav" id="sound1"></source>
+      </div>
+
       <div class="left-city">
         <div class="left-button">
-          <button type="button" class="button">Seattle</button>
+          <input type="button" class="button" value="Seattle" id="seattle" onclick="getWeatherSeattle()">
         </div>
       </div>
       <div class="right-city">
         <div class="right-button">
-          <button type="button" class="button">London</button>
+          <input type="button" class="button" value="London" id="london" onclick="getWeatherLondon()">
         </div>
       </div>
     <main>
+    <script type="text/javascript" src="script/script.js"></script>
   </body>
 </html>

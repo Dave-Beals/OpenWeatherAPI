@@ -13,22 +13,24 @@
       </div>
 
       <div class="container">
-        <form>
-          <div class="city-buttons">
-            <div id="left-button">
-              <label>
-                <input type="radio" name="city-select" class="button" id="seattle" onclick="getWeatherSeattle()">Seattle
-              </label>
+        <form id="apiOptions" onsubmit="handleSubmit()">
+          <fieldset>
+            <div class="city-buttons">
+              <div id="left-button">
+                <label>
+                  <input type="radio" name="city-select" class="button" id="seattle">Seattle
+                </label>
+              </div>
+              <div id="right-button">
+                <label>
+                  <input type="radio" name="city-select" class="button" id="london">London
+                </label>
+              </div>
             </div>
-            <div id="right-button">
-              <label>
-                <input type="radio" name="city-select" class="button" id="london" onclick="getWeatherLondon()">London
-              </label>
-            </div>
-          </div>
-            <div class="weather-submit">
-              <input type="submit" value="Get Yer Weather Report!">
-            </div>
+              <div class="weather-submit">
+                <input type="submit" name="submit" value="Get Yer Weather Report!" >
+              </div>
+          </fieldset>
         </form>
       </div>
 

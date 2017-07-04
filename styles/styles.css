@@ -42,7 +42,7 @@ fieldset {
   padding-top: 2rem;
 }
 
-.weather-results {
+#weatherResults {
   display: flex;
   justify-content: center;
   align-items: center;

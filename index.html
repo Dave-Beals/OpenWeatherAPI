@@ -12,17 +12,31 @@
           <source src="media/inception-horn.wav" type="audio/wav" id="sound1"></source>
       </div>
 
-      <div class="left-city">
-        <div class="left-button">
-          <input type="button" class="button" value="Seattle" id="seattle" onclick="getWeatherSeattle()">
-        </div>
+      <div class="container">
+        <form>
+          <div class="city-buttons">
+            <div id="left-button">
+              <label>
+                <input type="radio" name="city-select" class="button" id="seattle" onclick="getWeatherSeattle()">Seattle
+              </label>
+            </div>
+            <div id="right-button">
+              <label>
+                <input type="radio" name="city-select" class="button" id="london" onclick="getWeatherLondon()">London
+              </label>
+            </div>
+          </div>
+            <div class="weather-submit">
+              <input type="submit" value="Get Yer Weather Report!">
+            </div>
+        </form>
       </div>
-      <div class="right-city">
-        <div class="right-button">
-          <input type="button" class="button" value="London" id="london" onclick="getWeatherLondon()">
-        </div>
+
+      <div class="weather-results">
+        <!-- weather results go here -->
       </div>
-    <main>
+
+    </main>
     <script type="text/javascript" src="script/script.js"></script>
   </body>
 </html>

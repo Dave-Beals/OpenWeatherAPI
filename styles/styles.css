@@ -11,17 +11,18 @@ main {
   flex-direction: row;
 }
 
-.left-city {
+.container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-color: #5A5353;
-  width: 50%;
+  width: 67%;
   height: 100vh;
 }
 
-.button {
+.city-buttons div {
   padding: 1rem;
+  margin: 1rem;
   background-color: transparent;
   color: white;
   border: 3px solid white;
@@ -30,15 +31,19 @@ main {
   display: inline-block;
 }
 
-.button:hover {
-  background-color: rgba(255, 255, 255, .25)
-}
-
-.right-city {
+.weather-submit {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #5A5353;
-  width: 50%;
+  padding-top: 2rem;
+}
+
+.weather-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: #5A5353;*/
+  background-color: red;
+  width: 33%;
   height: 100vh;
 }

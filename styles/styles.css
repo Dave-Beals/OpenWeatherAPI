@@ -11,6 +11,10 @@ main {
   flex-direction: row;
 }
 
+fieldset {
+  border: none;
+}
+
 .container {
   display: flex;
   justify-content: space-around;
@@ -22,13 +26,13 @@ main {
 
 .city-buttons div {
   padding: 1rem;
-  margin: 1rem;
+  margin: 3rem;
   background-color: transparent;
   color: white;
   border: 3px solid white;
   text-align: center;
   font-size: 3.5rem;
-  display: inline-block;
+  display: column;
 }
 
 .weather-submit {

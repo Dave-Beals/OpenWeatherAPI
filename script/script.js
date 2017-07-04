@@ -2,6 +2,14 @@ const apiURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.or
 //need to input key somehow
 const APPID = "b113558884743a089516dcd3172bc769"
 
+function handleSubmit() {
+  event.preventDefault()
+  console.log(form)
+
+  //get form values
+  
+}
+
 function getWeatherSeattle(queryString) {
   // weatherSound.play()
   let request = new XMLHttpRequest()

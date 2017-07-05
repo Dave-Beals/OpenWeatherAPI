@@ -5,6 +5,7 @@ const form = document.querySelector("form");
 const seattleCoord = {lat: 47.6762, lon: -122.3182};
 const londonCoord = {lat: 51.5074, lon: 0.1278};
 var selectedCity = '';
+var audio = document.getElementById("weatherSound")
 
 
 let debug = null;
@@ -23,6 +24,7 @@ function handleSubmit() {
     let queryString = queryBuilder(cityPick);
     //call getWeather with the query string
     getWeather(queryString);
+    audio.play();
   }
 
   //put values into a string
@@ -48,7 +50,7 @@ function getWeather(queryString) {
 
     let reportDiv = document.getElementById("weatherResults");
     var p = document.createElement("p");
-    p.innerHTML = "The temperature is" + temperature;
+    p.innerHTML = "The temperature is " + temperature;
     reportDiv.appendChild(p);
   }
 

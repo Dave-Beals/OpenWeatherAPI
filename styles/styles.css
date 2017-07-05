@@ -19,8 +19,8 @@ fieldset {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #5A5353;
-  width: 67%;
+  background-color: #383838;
+  width: 60%;
   height: 100vh;
 }
 
@@ -47,7 +47,22 @@ fieldset {
   justify-content: center;
   align-items: center;
   /*background-color: #5A5353;*/
-  background-color: red;
-  width: 33%;
+  background-color: #383838;
+  width: 40%;
   height: 100vh;
+}
+
+#weatherResults p {
+  padding: 1.5rem;
+  color: white;
+  border: 3px solid white;
+  font-size: 2rem;
+}
+
+input[type="radio"] {
+  /*visibility: hidden;*/
+}
+
+label:hover {
+  background-color: rgba(255, 255, 255, 0.25);
 }

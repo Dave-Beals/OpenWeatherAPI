@@ -1,6 +1,6 @@
 const apiURL = "http://api.openweathermap.org/data/2.5/weather";
 //need to input key somehow
-const appId = "b113558884743a089516dcd3172bc769";
+const appId = "APPID=b113558884743a089516dcd3172bc769";
 const form = document.querySelector("form");
 const seattleCoord = {lat: 47.6762, lon: -122.3182};
 const londonCoord = {lat: 51.5074, lon: 0.1278};
@@ -74,7 +74,7 @@ function getWeather(queryString) {
 //REPLACE ALL THIS WITH AN EXPLICITLY STATED IF/ELSE
 //OpenWeatherMap's API call for geo coord: api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon} ADD KEY
 
-
+//  http://api.openweathermap.org/data/2.5/weather?lat=51.5074&lon=0.1278&b113558884743a089516dcd3172bc769
 
 function queryBuilder(queryObj) {
   let holder = [];

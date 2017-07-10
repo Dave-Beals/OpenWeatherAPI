@@ -4,29 +4,17 @@ const appId = "APPID=b113558884743a089516dcd3172bc769";
 const form = document.querySelector("form");
 const seattleCoord = {lat: 47.6762, lon: -122.3182};
 const londonCoord = {lat: 51.5074, lon: 0.1278};
-let newLoc = [];
+let locCoord = "";
+let newLoc = "";
 var audio = document.getElementById("weatherSound");
 
 
 let debug = null;
 
-function handleSubmit() {
+function weatherClick() {
   event.preventDefault();
   console.log(form);
-  
-  function newLocation() {
-    navigator.geolocation.getCurrentPosition(geolocSuccess, geolocError);
-  }
 
-  function geolocSuccess(position) {
-    const newPos = {lat: position.coords.latitude, lng: position.coords.longitude};
-    newLoc.push(newPos);
-    console.log(newPos);
-    //getLocation(newPos);
-  }
-
-  function geolocError(){
-    console.log("Error getting user's location")
 
   //get form values
   var cityPick = form.citySelect.value; //this will make value the city selected
@@ -35,7 +23,16 @@ function handleSubmit() {
     } else if(form.citySelect.value === "London") {
       cityPick = londonCoord;
     } else if(form.citySelect.value === "userLoc") {
-      cityPick = newLoc;
+      navigator.geolocation.getCurrentPosition(geolocSuccess, geolocError);
+      function geolocSuccess(position){
+        let userLoc = {lat: position.coords.latitude, lng: position.coords.longitude};
+        newLoc.push(userLoc);
+          console.log(newLoc);
+          cityPick = newLoc;
+      }
+      function geolocError(){
+        console.log("Error getting user's location")
+      }
     }
     //serialize them into a query string
     let queryString = queryBuilder(cityPick);
@@ -131,3 +128,9 @@ function queryBuilder(queryObj) {
 //      // prepend a ? to concatenated string, return. Also append w/ lat long and appID
      return `?${longString}&${appId}`;
    }
+
+   document.addEventListener("DOMContentLoaded", function() {
+     seattle.addEventListener("click", weatherClick);
+     london.addEventListener("click", weatherClick);
+     userLoc.addEventListener("click", weatherClick);
+ })

@@ -16,20 +16,19 @@
         <form id="apiOptions" onsubmit="handleSubmit()">
           <fieldset>
             <div class="city-buttons">
-              <div id="left-button">
-                <label>
-                  <input type="radio" name="citySelect" class="button" value="Seattle">Seattle
-                </label>
+              <div id="top-button">
+                  <button type="button" name="citySelect" class="button" value="Seattle">Seattle</button>
               </div>
-              <div id="right-button">
-                <label>
-                  <input type="radio" name="citySelect" class="button" value="London">London
-                </label>
+              <div id="middle-button">
+                  <button type="button" name="citySelect" class="button" value="London">London</button>
+              </div>
+              <div id="bottom-button">
+                  <button type="button" name="citySelect" class="button" value="userLoc">Your Location</button>
               </div>
             </div>
-              <div class="weather-submit">
-                <input type="submit" name="submit" value="What's the temp?">
-              </div>
+              <!-- <div class="weather-submit">
+                <input type="submit" name="citySelect" value="What's the temp?">
+              </div> -->
           </fieldset>
         </form>
       </div>

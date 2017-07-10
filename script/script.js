@@ -13,73 +13,36 @@ let debug = null;
 
 function weatherClick() {
   event.preventDefault();
-  console.log(form);
 
-
-  //get form values
-  var cityPick = form.citySelect.value; //this will make value the city selected
-    if(form.citySelect.value === "Seattle") {
-      cityPick = seattleCoord;
-    } else if(form.citySelect.value === "London") {
-      cityPick = londonCoord;
-    } else if(form.citySelect.value === "userLoc") {
-      navigator.geolocation.getCurrentPosition(geolocSuccess, geolocError);
-      function geolocSuccess(position){
-        let userLoc = {lat: position.coords.latitude, lng: position.coords.longitude};
-        newLoc.push(userLoc);
-          console.log(newLoc);
-          cityPick = newLoc;
-      }
-      function geolocError(){
-        console.log("Error getting user's location")
-      }
-    }
-    //serialize them into a query string
-    let queryString = queryBuilder(cityPick);
+    let queryString = queryBuilder(locCoord);
     //call getWeather with the query string
     getWeather(queryString);
-    audio.play();
   }
 
-// function newLocation() {
-//   navigator.geolocation.getCurrentPosition(geolocSuccess, geolocError);
-// }
-//
-// function geolocSuccess(position) {
-//   const newPos = {lat: position.coords.latitude, lng: position.coords.longitude};
-//   newLoc.push(newPos);
-//   console.log(newPos);
-//   //getLocation(newPos);
-// }
-//
-// function geolocError(){
-//   console.log("Error getting user's location")
-// }
+//new functions for button onclicks.
+document.getElementById("seattle").onclick = function() {
+  locCoord = seattleCoord;
+  console.log(locCoord);
+}
 
-// function onerrorFunc(){
-//   printListItem("Sorry, an error occured");
-// }
-//
-// // function getLocation(locObj) {
-// //   let mapUri = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${locObj.lat},${locObj.lng}&key=AIzaSyA5d8ZwO3RgYJsVYzTKue_IuBK0nxTfeFY`;
-// //   let request = new XMLHttpRequest();
-// //   request.open("GET", mapUri, true);
-// //   //create onload func
-// //   request.onload = onloadFunc;
-// //   //tie to existing onerror
-// //   request.onerror = onerrorFunc;
-// //   request.send();
-// // }
-// //
-// // function onloadFunc(){
-// //   const resp = JSON.parse(this.response);
-// //   console.log(resp);
-// //   if(resp.results.length>0){
-// //     printListItem(resp.results[0].formatted_address);
-// //   } else {
-// //     printListItem("No results were found");
-// //   }
-// // }
+document.getElementById("london").onclick = function() {
+  locCoord = londonCoord;
+  console.log(locCoord);
+}
+
+//function to get user loc from browser and set as locCoord. Move success and error here
+document.getElementById("userLoc").onclick = function() {
+  navigator.geolocation.getCurrentPosition(geolocSuccess, geolocError);
+  function geolocSuccess(position){
+      locCoord = {lat: position.coords.latitude, lng: position.coords.longitude};
+      console.log(locCoord);
+  }
+  function geolocError(){
+       console.log("Error getting your location")
+   }
+}
+
+
 
 function getWeather(queryString) {
   let request = new XMLHttpRequest();
@@ -97,6 +60,7 @@ function getWeather(queryString) {
     var p = document.createElement("p");
     p.innerHTML = "The temperature is " + temperature;
     reportDiv.appendChild(p);
+    audio.play();
   }
 
   //fires if something goes wrong

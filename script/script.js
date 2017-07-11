@@ -1,48 +1,50 @@
-const apiURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather";
+const apiURL = "http://api.openweathermap.org/data/2.5/weather";
 //need to input key somehow
 const appId = "APPID=b113558884743a089516dcd3172bc769";
 const form = document.querySelector("form");
 const seattleCoord = {lat: 47.6762, lon: -122.3182};
 const londonCoord = {lat: 51.5074, lon: 0.1278};
+
 let locCoord = "";
-let newLoc = "";
 var audio = document.getElementById("weatherSound");
 
 
 let debug = null;
 
-function weatherClick() {
-  event.preventDefault();
-
-    let queryString = queryBuilder(locCoord);
-    //call getWeather with the query string
-    getWeather(queryString);
-  }
 
 //new functions for button onclicks.
 document.getElementById("seattle").onclick = function() {
   locCoord = seattleCoord;
-  console.log(locCoord);
+  weatherClick();
 }
 
 document.getElementById("london").onclick = function() {
   locCoord = londonCoord;
-  console.log(locCoord);
+  weatherClick();
 }
 
 //function to get user loc from browser and set as locCoord. Move success and error here
 document.getElementById("userLoc").onclick = function() {
   navigator.geolocation.getCurrentPosition(geolocSuccess, geolocError);
   function geolocSuccess(position){
-      locCoord = {lat: position.coords.latitude, lng: position.coords.longitude};
+      locCoord = {lat: position.coords.latitude, lon: position.coords.longitude};
+      // locCoord = newLoc;
       console.log(locCoord);
+      weatherClick();
   }
   function geolocError(){
        console.log("Error getting your location")
    }
 }
 
+function weatherClick() {
+  //commenting out preventDefault - causing error with userLoc
+  // event.preventDefault();
 
+    let queryString = queryBuilder(locCoord);
+    //call getWeather with the query string
+    getWeather(queryString);
+  }
 
 function getWeather(queryString) {
   let request = new XMLHttpRequest();
@@ -54,6 +56,7 @@ function getWeather(queryString) {
   //tweak below to start new function that can serve Seattle, London, AND userLoc
   request.onload = function() {
     let response = JSON.parse(request.response);
+    console.log(response);
     let temperature = response.main.temp;
 
     let reportDiv = document.getElementById("weatherResults");
@@ -89,12 +92,14 @@ function queryBuilder(queryObj) {
      }
 //      // concatenate the pairs together, with & between
      let longString = holder.join("&");
-//      // prepend a ? to concatenated string, return. Also append w/ lat long and appID
+     console.log(longString);
+//      // prepend a ? to concatenated string, return. Append appID
      return `?${longString}&${appId}`;
    }
 
-   document.addEventListener("DOMContentLoaded", function() {
-     seattle.addEventListener("click", weatherClick);
-     london.addEventListener("click", weatherClick);
-     userLoc.addEventListener("click", weatherClick);
- })
+//event listeners - do individual onclicks instead w/out these
+ //   document.addEventListener("DOMContentLoaded", function() {
+ //     seattle.addEventListener("click", weatherClick);
+ //     london.addEventListener("click", weatherClick);
+ //     userLoc.addEventListener("click", weatherClick);
+ // })

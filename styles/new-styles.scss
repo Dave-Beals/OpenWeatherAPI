@@ -1,0 +1,68 @@
+@import "variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+fieldset {
+  border: none;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $default-bg;
+  width: 60%;
+  height: 100vh;
+}
+
+button {
+  padding: $btn-size;
+  margin: $btn-size;
+  background-color: transparent;
+  color: $text-clr;
+  border: $btn-bdr;
+  text-align: center;
+  font-size: 3.5rem;
+  display: column;
+
+  &:hover {
+    background-color: $btn-hover;
+    font-size: 3.75rem;
+  }
+}
+
+
+.weather-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+#weatherResults {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: #5A5353;*/
+  background-color: $default-bg;
+  width: 40%;
+  height: 100vh;
+}
+
+#weatherResults p {
+  padding: 1.5rem;
+  color: $text-clr;
+  border: $btn-bdr;
+  font-size: 2rem;
+}

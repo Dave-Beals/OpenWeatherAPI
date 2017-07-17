@@ -1,4 +1,4 @@
-const apiURL = "https://uwpce-weather-proxy.herokuapp.com/data/2.5/weather";
+const apiURL = "http://api.openweathermap.org/data/2.5/weather";
 //need to input key somehow
 const appId = "APPID=b113558884743a089516dcd3172bc769";
 const form = document.querySelector("form");

@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-}
-
 main {
   display: flex;
   flex-direction: row;
@@ -17,11 +13,16 @@ fieldset {
   border: none;
 }
 
+body {
+  margin: 0;
+  background-color: $default-bg;
+}
+
 .container {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: $default-bg;
+  //background-color: $default-bg;
   width: 60%;
   height: 100vh;
 }
@@ -55,7 +56,7 @@ button {
   justify-content: center;
   align-items: center;
   /*background-color: #5A5353;*/
-  background-color: $default-bg;
+  //background-color: $default-bg;
   width: 40%;
   height: 100vh;
 }
@@ -65,4 +66,25 @@ button {
   color: $text-clr;
   border: $btn-bdr;
   font-size: 2rem;
+}
+
+.seattle-bg {
+  background-image: url("../images/seattle.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+}
+
+.london-bg {
+  background-image: url("../images/london.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+}
+
+.your-loc {
+  background-image: url("../images/moon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
 }

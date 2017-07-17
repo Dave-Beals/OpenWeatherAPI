@@ -15,11 +15,15 @@ let debug = null;
 //new functions for button onclicks.
 document.getElementById("seattle").onclick = function() {
   locCoord = seattleCoord;
+  var x = document.getElementById("home");
+  x.classList.toggle("seattle-bg");
   weatherClick();
 }
 
 document.getElementById("london").onclick = function() {
   locCoord = londonCoord;
+  var x = document.getElementById("home");
+  x.classList.toggle("london-bg");
   weatherClick();
 }
 
@@ -30,6 +34,8 @@ document.getElementById("userLoc").onclick = function() {
       locCoord = {lat: position.coords.latitude, lon: position.coords.longitude};
       // locCoord = newLoc;
       console.log(locCoord);
+      var x = document.getElementById("home");
+      x.classList.toggle("your-loc");
       weatherClick();
   }
   function geolocError(){
@@ -47,6 +53,7 @@ function weatherClick() {
   }
 
 function getWeather(queryString) {
+  // document.getElementById("weatherResults") = "";
   let request = new XMLHttpRequest();
   //starts talking to API - 3 params
   request.open("GET", apiURL + queryString, true);

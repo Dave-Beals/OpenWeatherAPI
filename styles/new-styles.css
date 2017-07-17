@@ -1,0 +1,96 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+fieldset {
+  border: none; }
+
+body {
+  margin: 0;
+  background-color: #383838; }
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  height: 100vh; }
+
+button {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: transparent;
+  color: #F8F8FF;
+  border: 3px solid white;
+  text-align: center;
+  font-size: 3.5rem;
+  display: column; }
+  button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    font-size: 3.75rem; }
+
+.weather-submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 2rem; }
+
+#weatherResults {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*background-color: #5A5353;*/
+  width: 40%;
+  height: 100vh; }
+
+#weatherResults p {
+  padding: 1.5rem;
+  color: #F8F8FF;
+  border: 3px solid white;
+  font-size: 2rem; }
+
+.seattle-bg {
+  background-image: url("../images/seattle.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black; }
+
+.london-bg {
+  background-image: url("../images/london.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black; }
+
+.your-loc {
+  background-image: url("../images/moon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black; }
+
+/*# sourceMappingURL=new-styles.css.map */

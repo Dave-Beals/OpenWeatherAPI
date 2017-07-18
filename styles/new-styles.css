@@ -40,8 +40,23 @@ button {
   font-size: 3.5rem;
   display: column; }
   button:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-    font-size: 3.75rem; }
+    -webkit-box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.25);
+            box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.25); }
+
+#seattle {
+  background-color: "transparent"; }
+  #seattle:hover {
+    background-color: rgba(255, 255, 255, 0.25); }
+
+#london {
+  background-color: "transparent"; }
+  #london:hover {
+    background-color: rgba(255, 255, 255, 0.25); }
+
+#userLoc {
+  background-color: "transparent"; }
+  #userLoc:hover {
+    background-color: rgba(255, 255, 255, 0.25); }
 
 .weather-submit {
   display: -webkit-box;

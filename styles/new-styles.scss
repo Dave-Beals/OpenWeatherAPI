@@ -1,4 +1,4 @@
-@import "variables";
+@import "_variables";
 
 * {
   box-sizing: border-box;
@@ -38,11 +38,23 @@ button {
   display: column;
 
   &:hover {
-    background-color: $btn-hover;
-    font-size: 3.75rem;
+    //background-color: $btn-hover;
+    box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.25);
   }
 }
 
+@each $location, $colors in $locations-map {
+  ##{$location} {
+    $regular: nth($colors, 1);
+    $hover: nth($colors, 2);
+
+    background-color: $regular;
+
+    &:hover {
+      background-color: $hover;
+    }
+  }
+}
 
 .weather-submit {
   display: flex;
